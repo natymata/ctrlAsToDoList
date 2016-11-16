@@ -1,0 +1,39 @@
+<!-- detail page -->
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12">
+			<a ng-href="#/" class="btn btn-success btn-back"><span class="glyphicon glyphicon-circle-arrow-left"></span></a>
+		</div><!-- col-xs-12 -->
+	</div><!-- row -->
+	<div class="row">
+		<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
+			<h2 class="text-center">Details</h2>
+			<table class="table table-striped">
+				<tbody>
+					<tr>
+						<td class="text-right paddingTdDetRg">To Do:</td>
+						<td class="text-bigger paddingTdDetLf">{{detail.todo.text}}</td>
+					</tr>
+					<tr>
+						<td class="text-right paddingTdDetRg">Description:</td>
+						<td class="paddingTdDetLf">{{detail.todo.description}}</td>
+					</tr>
+					<tr>
+						<td class="text-right paddingTdDetRg">Deadline</td>
+						<td class="paddingTdDetLf">{{detail.todo.deadline | date: 'MMM/dd/yyyy'}}</td>
+					</tr>
+					<tr>
+						<td class="text-right paddingTdDetRg">State</td>
+						<td class="paddingTdDetLf">{{detail.todo.state}}</td>
+					</tr>
+					<tr>
+						<td colspan="2"><button class="btn btn-warning center-block remove-detail" ng-click="detail.removeToDo(detail.todo.id)">Remove</button></td>
+					</tr>
+				</tbody>
+			</table>
+
+
+			
+		</div><!-- col-sm-12 -->
+	</div> <!-- row -->
+</div><!-- container-fluid

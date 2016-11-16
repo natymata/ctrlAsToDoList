@@ -1,0 +1,173 @@
+@font-face {
+	font-family: gothamLight;
+	src: url(fonts/gotham-light.woff);
+}
+
+@font-face {
+	font-family: montserrat;
+	src: url(fonts/montserrat-Regular.ttf);
+}
+
+@font-face {
+	font-family: ravi;
+	src: url(fonts/RaviPrakash-Regular.ttf);
+}
+
+html, body{
+	height: 100%;
+	font-family: gothamLight;
+}
+
+p{
+	font-size: 18px;
+}
+
+/*.heigth100{
+	height: 100%;
+}*/
+
+.navbar-brand{
+	padding-top: 6px;
+}
+
+.navbar-text{
+	font: bolder 1.6em gothamLight;
+}
+
+.navbar-default .navbar-text{
+    background: -webkit-linear-gradient(left, #94d122 0%,#94d122 0%,#94d122 44%,#dbf401 100%); /* Chrome10-25,Safari5.1-6 */
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.navbar{
+	margin-bottom: 0;
+	border-radius: 0;
+}
+
+.navbar-default{
+	background: -webkit-linear-gradient(top, #1c1d1f 0%,#393a3e 100%); /* Chrome10-25,Safari5.1-6 */
+	border:none;
+}
+
+input, label, textarea{
+	display: block;
+}
+
+textarea{
+	resize: none;
+}
+
+.form-group{
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+.grey-grad{
+	background: -webkit-linear-gradient(top, #393a3e 1%,#404040 100%); /* Chrome10-25,Safari5.1-6 */
+}
+
+.marginTop1{
+	margin-top: 2em;
+}
+
+.fffColor{
+	color: #bfbfbf;
+}
+
+.btn-success{
+	background: -webkit-linear-gradient(top, #94d122 0%,#94d122 60%,#dbf401 99%); /* Chrome10-25,Safari5.1-6 */
+	margin-top: 4em;
+	margin-bottom: 4em;
+	border:none;
+}
+
+.btn-warning, .btn-danger, .btn-primary{
+	background: transparent;
+	color: #000;
+}
+
+.btn-warning{
+	border-color: #eb9b09;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.btn-danger{
+	border-color: #e20909;
+	margin-top: 1.2em;
+	margin-bottom: 1.5em;
+	margin-right: 15px;
+}
+
+.btn-primary{
+	border-color: #94d122;
+}
+
+.btn-success:hover, .btn-primary:hover{
+	background: #6f960f;
+	border-color: #6f960f;
+}
+
+.btn-warning:hover{
+	background: #e5aa09;
+	border-color: #e5aa09;
+}
+
+.btn-danger:hover{
+	background: #e46d6d;
+	border-color: #e46d6d;
+}
+
+input[type=checkbox]{
+	display: inline;
+}
+
+.marginBottom1{
+	margin-bottom: 5em;
+}
+
+.done{
+	text-decoration: line-through;
+	color: #ccc;
+}
+
+table{
+	margin: 0 auto;
+}
+
+table, tr, td{
+	border: 1px solid #fff;
+	border-collapse: collapse;
+	padding:12px;
+}
+
+td{
+	border-bottom: 1px solid silver;
+}
+
+.text-bigger{
+	font-size: 18px;
+}
+
+
+/*DETAIL PAGE*/
+.btn-back{
+	margin-top: 15px;
+	margin-bottom: 0;
+	font-size: 18px;
+}
+
+.remove-detail{
+	margin-top:.5em;
+	margin-bottom:.5em
+}
+
+table>tbody>tr>td.paddingTdDetRg{
+	padding: 8px 25px 8px 8px;
+}
+
+table>tbody>tr>td.paddingTdDetLf{
+	padding: 8px 8px 8px 25px;
+}
+

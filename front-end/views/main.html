@@ -1,0 +1,52 @@
+<!-- main page --> 
+<div class="container-fluid"> <!-- main container -->
+	<div class="row"> <!-- main row -->
+		<div class="col-md-3 col-sm-4 col-xs-12 grey-grad"> <!-- left panel -->
+			<h2 class="text-center marginTop1 fffColor">Add Task</h2>
+			<form class="text-center" name="addForm" autocomplete="off" ng-submit="addForm.$valid && main.addToDo()" novalidate>
+				<div class="form-group">
+					<label for="text" class="fffColor">To do:</label>
+					<input type="text" name="text" id="text" placeholder="To do" class="form-control" ng-model="main.newTodo.text" requiered ng-model-options="{ updateOn:'blur'}">
+					<sub ng-show="addForm.text.$invalid && addForm.text.$touched">To do requierd</sub>
+				</div>
+				<div class="form-group">
+					<label for="description" class="fffColor">Description:</label>
+					<textarea rows="5" name="description" id="description" placeholder="Description" class="form-control" ng-model="main.newTodo.description" ng-model-options="{ updateOn:'blur'}"></textarea>
+				</div>
+				<div class="form-group">
+					<label for="deadline" class="fffColor">Deadline:</label>
+					<input type="date" name="deadline" id="deadline" class="form-control" ng-model="main.newTodo.deadline">
+				</div>
+				<div class="form-group">
+					<input type="submit" class="btn btn-success btn-block" value="Send">
+				</div>
+			</form>
+		</div> <!-- left panel -->
+	
+		<div class="col-md-9 col-sm-8 col-xs-12"> <!-- rigth panel -->
+
+<!-- <div class="debug">
+<p class="text-info">{{ main.list | json}}</p>
+<p>{{main.newTodo | json}}</p>
+</div> -->
+			<h2 class="text-center marginTop1 grayColor">All Tasks</h2>
+			<p ng-show="main.pending()>0">{{main.pending()}} remaining.</p>
+			<p ng-show="main.pending()==0">There is no remaining to dos</p>
+
+			<table>
+				<tr ng-repeat="todo in main.list | orderBy:'-id' track by $index">
+					<td><input type="checkbox" ng-model="todo.done" ng-click="main.updateDone(todo)"></td>
+					<td ng-class="{'done':todo.done}"><span class="text-bigger">{{todo.text}}</span></td>
+					<td ng-class="{'done':todo.done}">{{todo.deadline | date: 'MMM/dd/yyyy'}}</td>
+					<td><a ng-href="#/detail/{{todo.id}}" class="btn btn-primary">Ver Detalles</a></td>
+					<td><button class="btn btn-warning" ng-click="main.removeToDo(todo.id)">Remove</button></td>
+				</tr>
+			</table>
+
+			<button class="btn btn-warning" ng-click="main.clearDone()" ng-show="main.pending()>0">Clear done</button>
+			<button class="btn btn-danger pull-right" ng-click="main.clearAll()" ng-hide="main.list.length==0">Clear all</button>
+		</div><!-- rigth panel -->
+
+
+	</div> <!-- main row -->
+</div> <!-- main container
