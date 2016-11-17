@@ -150,11 +150,28 @@ td{
 	font-size: 18px;
 }
 
+/*
+validations
+ */
+
+input.ng-invalid.ng-dirty{
+	border: 1px solid #fa787e;
+}
+
+input.ng-valid.ng-dirty{
+	border: 1px solid #78fa89;
+}
+
+input.ng-invalid.ng-touched.ng-invalid-required{
+	border: 1px solid #fa787e;
+}
+
 sub{
 	color:#fff;
 	margin-top: 10px;
 	padding-right: 4px;
 }
+
 
 
 /*DETAIL PAGE*/
