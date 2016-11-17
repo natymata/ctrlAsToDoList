@@ -150,6 +150,12 @@ td{
 	font-size: 18px;
 }
 
+sub{
+	color:#fff;
+	margin-top: 10px;
+	padding-right: 4px;
+}
+
 
 /*DETAIL PAGE*/
 .btn-back{

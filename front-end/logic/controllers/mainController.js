@@ -35,5 +35,10 @@ angular.module('toDoList.controllers')
 		main.list= toDoService.clearAll();
 	};
 
+	main.checkDate= function() {
+		var today= new Date();
+		return new Date(today.getFullYear(), today.getMonth(), today.getDate());
+	};
+
 	main.init();
 });

@@ -6,16 +6,18 @@
 			<form class="text-center" name="addForm" autocomplete="off" ng-submit="addForm.$valid && main.addToDo()" novalidate>
 				<div class="form-group">
 					<label for="text" class="fffColor">To do:</label>
-					<input type="text" name="text" id="text" placeholder="To do" class="form-control" ng-model="main.newTodo.text" requiered ng-model-options="{ updateOn:'blur'}">
-					<sub ng-show="addForm.text.$invalid && addForm.text.$touched">To do requierd</sub>
+					<input type="text" name="text" id="text" placeholder="To do" class="form-control" ng-model="main.newTodo.text" ng-model-options="{ debounce: 500}" required>
+					<sub class="pull-right" ng-show="addForm.text.$invalid && addForm.text.$touched">To do required</sub>
 				</div>
 				<div class="form-group">
 					<label for="description" class="fffColor">Description:</label>
-					<textarea rows="5" name="description" id="description" placeholder="Description" class="form-control" ng-model="main.newTodo.description" ng-model-options="{ updateOn:'blur'}"></textarea>
+					<textarea rows="5" name="description" id="description" placeholder="Description" class="form-control" ng-model="main.newTodo.description" ng-model-options="{ debounce: 500}"></textarea>
 				</div>
 				<div class="form-group">
 					<label for="deadline" class="fffColor">Deadline:</label>
-					<input type="date" name="deadline" id="deadline" class="form-control" ng-model="main.newTodo.deadline">
+					<input type="date" name="deadline" id="deadline" class="form-control" ng-model="main.newTodo.deadline" min="{{main.checkDate() | date:'yyyy-MM-dd'}}" required>
+					<sub class="pull-right" ng-show="addForm.deadline.$error.required && addForm.deadline.$touched">Deadline required</sub>
+					<sub class="pull-right" ng-show="addForm.deadline.$error.min && addForm.deadline.$touched">Error only date or date and time allowed</sub>
 				</div>
 				<div class="form-group">
 					<input type="submit" class="btn btn-success btn-block" value="Send">
